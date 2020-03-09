@@ -26,7 +26,7 @@ module.exports = async (req, res, next) => {
   url.searchParams.append('$$app_token', APP_TOKEN);
 
   // Setting default limit to 50
-  req.query.$limit = (req.query.$limit && req.query.$limit < 300) ? req.query.$limit : 50;
+  req.query.$limit = (req.query.$limit && req.query.$limit <= 300) ? req.query.$limit : 50;
 
   // Adding request query parameters to URL object
   addQueryParams(url, req);
