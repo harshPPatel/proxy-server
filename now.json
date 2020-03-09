@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "name": "proxy-server",
   "builds": [{
-    "src": "index.js",
+    "src": "./src/index.js",
     "use": "@now/node-server"
   }],
   "routes": [
-    { "src": "/.*", "dest": "index.js" }
-  ]
+    { "src": "/.*", "dest": "/src/index.js" }
+  ],
+  "env": {
+    "WINNIPEG_DATASET_API_KEY": "@winnipeg-dataset-api-token"
+  }
 }
